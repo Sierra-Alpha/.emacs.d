@@ -1,0 +1,14 @@
+
+
+* Links
+  - [[https://www.github.com/sierra-alpha][my GH repo]]
+* Lesson 1
+  introducing the series and setting up the package manager
+  - Show melpa
+  - ser ip melpa
+** other things
+  - installed use-package
+* Lesson 2
+  Show some org-mode
+  - review init.el
+  - set up Readme.org
