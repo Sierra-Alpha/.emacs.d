@@ -1,4 +1,4 @@
-
+#+STARTUP: showall hidestars
 
 * Links
   - [[https://www.github.com/sierra-alpha][my GH repo]]
