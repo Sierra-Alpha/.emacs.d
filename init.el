@@ -16,6 +16,7 @@
 ;; My stuff
 
 (setq inhibit-startup-message t)
+(tool-bar-mode -1)
 
 (require 'package)
 (setq package-enable-at-startup nil)
