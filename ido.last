@@ -1,0 +1,36 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/shaun/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/shaun/"
+ "/home/shaun/.emacs.d/"
+ "/home/shaun/.config/fish/functions/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "readme.org"
+ "README.md"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/shaun/" (24153 37899 943692 800000) "07 UNI/" ".zcompdump-CAD-Machine-5.7.1" ".ssh/" ".profile" ".local/" ".gitconfig" ".emacs.d/" ".dbus/" ".config/" ".cache/" ".bashrc" ".bash_logout" ".bash_history" "../" "./")
+
+ ("/home/shaun/.emacs.d/" (24153 27591 142832 800000) "recentf" "readme.org~" "readme.org" "lesson-4-notes.org~" "lesson-4-notes.org" "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" ".git/" "../" "./")
+
+ ("/home/shaun/.config/" (24151 27065 859388 300000) "fish/" "../" "./")
+
+ ("/home/shaun/.config/fish/" (24152 26870 13803 700000) "functions/" "fish_variables" "../" "./")
+
+ ("/home/shaun/.config/fish/functions/" (24152 27197 853948 200000) "uni.fish" "set-pwd-to-full.fish" "sa-fish-bootstrap.fish" "nw.fish" "git_remote_status.fish" "fish_prompt.fish" "README.md" ".git/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
