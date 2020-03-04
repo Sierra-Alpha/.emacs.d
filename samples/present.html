@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(CAD-Machine)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="author">CAD-Machine</h2><p class="date">Created: 2020-03-04 Wed 22:25</p>
+</section>
+<section id="table-of-contents"><div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgf19bcd8">1. Slide 1</a></li>
+<li><a href="#/slide-org336b49b">2. Slide 2</a>
+<ul>
+<li><a href="#/slide-org0521c0c">2.1. Subslide 1</a></li>
+<li><a href="#/slide-orgd2ba48d">2.2. subslide 2</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgdaa5040">3. Slide 3</a></li>
+<li><a href="#/slide-org51b59c1">4. Slide 4</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-orgf19bcd8">
+<h2 id="orgf19bcd8"><span class="section-number-2">1</span> Slide 1</h2>
+</section>
+</section>
+<section>
+<section id="slide-org336b49b">
+<h2 id="org336b49b"><span class="section-number-2">2</span> Slide 2</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</section>
+<section id="slide-org0521c0c">
+<h3 id="org0521c0c"><span class="section-number-3">2.1</span> Subslide 1</h3>
+</section>
+<section id="slide-orgd2ba48d">
+<h3 id="orgd2ba48d"><span class="section-number-3">2.2</span> subslide 2</h3>
+</section>
+</section>
+<section>
+<section id="slide-orgdaa5040">
+<h2 id="orgdaa5040"><span class="section-number-2">3</span> Slide 3</h2>
+<ul>
+<li>list item 1</li>
+<li><p>
+list item 2
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">a</th>
+<th scope="col" class="org-right">b</th>
+<th scope="col" class="org-right">c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">5</td>
+<td class="org-right">6</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org51b59c1">
+<h2 id="org51b59c1"><span class="section-number-2">4</span> Slide 4</h2>
+<div class="org-src-container">
+
+<pre  class="src src-python"><code trim><span style="color: #ff79c6; font-weight: bold;">def</span> <span style="color: #50fa7b; font-weight: bold;">f</span>(x):
+    <span style="color: #ff79c6; font-weight: bold;">return</span> x + 1
+
+<span style="color: #ff79c6; font-weight: bold;">print</span> f(5)
+
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
