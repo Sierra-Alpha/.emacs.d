@@ -2,3 +2,6 @@
 /elpa
 *.dat
 recentf
+/games
+*~
+
