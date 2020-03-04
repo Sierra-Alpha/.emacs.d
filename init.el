@@ -7,7 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (swiper-helm counsel swiper dracula-theme ace-window org-bullets which-key try use-package))))
+    (auto-complete swiper-helm counsel swiper dracula-theme ace-window org-bullets which-key try use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -75,7 +75,6 @@
   :ensure t
   )
 
-
 (use-package swiper
   :ensure t
   :config
@@ -101,4 +100,12 @@
     (global-set-key (kbd "C-x l") 'counsel-locate)
     (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+    ))
+
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
     ))
