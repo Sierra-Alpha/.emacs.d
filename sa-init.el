@@ -42,6 +42,8 @@
 (use-package dracula-theme
   :ensure t)
 
+(load-theme 'dracula t)
+
 (use-package counsel
   :ensure t
   )
@@ -89,3 +91,33 @@
     (ac-config-default)
     (global-auto-complete-mode t)
     ))
+
+(use-package ox-reveal
+  :ensure ox-reveal)
+
+(setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+(setq org-reveal-mathjax t)
+
+(use-package htmlize
+  :ensure t)
+
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode t))
+
+(use-package jedi
+  :ensure t
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (add-hook 'python-mode-hook 'jedi:ac-setup))
+
+(use-package elpy
+  :ensure t
+  :config
+  (elpy-enable))
+
+(use-package yasnippet
+  :ensure t
+  :init
+  (yas-global-mode 1))
