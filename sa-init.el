@@ -114,7 +114,7 @@
 
 (use-package elpy
   :ensure t
-  :config
+  :init
   (elpy-enable))
 
 (use-package yasnippet
