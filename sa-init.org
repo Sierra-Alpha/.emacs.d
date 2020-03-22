@@ -60,11 +60,11 @@
   #+BEGIN_SRC emacs-lisp
     (setq-default show-trailing-whitespace t)
     (setq-default whitespace-line-colomn 80)
-    (set-face-attribute 'whitespace-line nil 
-                        :background "#360000" :foreground nil)
     (setq whitespace-style 
         '(face spaces tabs trailing lines-tail space-mark tab-mark))
     (global-whitespace-mode t)
+    (set-face-attribute 'whitespace-line nil 
+                        :background "#360000" :foreground nil)
   #+END_SRC
 
 * Rainbow Delimiters

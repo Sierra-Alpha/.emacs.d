@@ -30,8 +30,11 @@
 
 (setq-default show-trailing-whitespace t)
 (setq-default whitespace-line-colomn 80)
-(setq whitespace-style '(face spaces tabs trailing lines-tail space-mark tab-mark))
+(setq whitespace-style 
+    '(face spaces tabs trailing lines-tail space-mark tab-mark))
 (global-whitespace-mode t)
+(set-face-attribute 'whitespace-line nil 
+                    :background "#360000" :foreground nil)
 
 (use-package rainbow-delimiters
   :ensure t
@@ -42,7 +45,8 @@
 (use-package highlight-indent-guides
       :ensure t
       :config
-        (setq highlight-indent-guides-method 'char)
+        (setq highlight-indent-guides-method 'character)
+        (setq highlight-indent-guides-responsive 'stack)
         (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
     )
 
