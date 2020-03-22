@@ -237,3 +237,7 @@
     (setq-default evil-cross-lines t)
   #+END_SRC
 
+* Remember Window Config
+  #+BEGIN_SRC emacs-lisp
+    (desktop-save-mode 1)
+  #+END_SRC

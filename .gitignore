@@ -10,4 +10,5 @@ recentf
 /.python-environments
 /elpy
 /eshell
+.emacs*
 

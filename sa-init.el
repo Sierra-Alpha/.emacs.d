@@ -31,10 +31,13 @@
 (setq-default show-trailing-whitespace t)
 (setq-default whitespace-line-colomn 80)
 (setq whitespace-style 
-    '(face spaces tabs trailing lines-tail space-mark tab-mark))
+    '(face spaces tabs trailing lines-tail space-mark tab-mark)
+)
 (global-whitespace-mode t)
-(set-face-attribute 'whitespace-line nil 
-                    :background "#360000" :foreground nil)
+(add-hook 'prog-mode-hook 
+          (lambda () (set-face-attribute 'whitespace-line nil 
+                      :background "#360000" :foreground nil)
+ ))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -161,3 +164,5 @@
 (require 'evil)
 (evil-mode 1)
 (setq-default evil-cross-lines t)
+
+(desktop-save-mode 1)
