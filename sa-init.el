@@ -8,25 +8,50 @@
 
 (use-package which-key
   :ensure t
-  :config (which-key-mode))
+  :config (which-key-mode)
+)
 
 (use-package org-bullets
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
-;;(setq indo-enable-flex-matching t)
-;;(setq ido-everywhere t)
-;;(ido-mode 1)
-
 (defalias 'list-buffers 'ibuffer)
-;;(defalias 'list-buffers 'ibuffer-other-window)
 
-;; If you like a tabbar
-;;(use-package tabbar 
-;;  :ensure t
-;;  :config
-;; (tabbar-mode 1)
+(setq backup-directory-alist
+     `(("." . ,(concat user-emacs-directory "backups"))))
+
+(add-hook 'prog-mode-hook 
+          (lambda () (setq-local display-line-numbers 'visual)))
+
+(setq-default indent-tabs-mode nil)
+(use-package dtrt-indent
+  :ensure t)
+
+(setq-default show-trailing-whitespace t)
+(setq-default whitespace-line-colomn 80)
+(setq whitespace-style '(face spaces tabs trailing lines-tail space-mark tab-mark))
+(global-whitespace-mode t)
+
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+  )
+
+(use-package highlight-indent-guides
+      :ensure t
+      :config
+        (setq highlight-indent-guides-method 'char)
+        (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
+    )
+
+;;    (defun my-highlighter (level responsive display)
+;;      DeepSkyBlue
+;;      DarkSeaGreen
+;;      LightGoldenRod
+;;      DarkOrange
+;;      MediumOrchid
 
 (use-package ace-window
   :ensure t
@@ -45,8 +70,7 @@
 (load-theme 'dracula t)
 
 (use-package counsel
-  :ensure t
-  )
+:ensure t)
 
 (use-package ivy
   :ensure t
@@ -109,15 +133,27 @@
 (use-package jedi
   :ensure t
   :init
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (add-hook 'python-mode-hook 'jedi:ac-setup))
+    (setq jedi:setup-keys t)
+  :config
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (add-hook 'python-mode-hook 'jedi:ac-setup)
+    (setq jedi:complete-on-dot t)
+ )
 
 (use-package elpy
   :ensure t
   :init
-  (elpy-enable))
+    (elpy-enable)
+    (setq elpy-rpc-backend "jedi"))
 
 (use-package yasnippet
   :ensure t
   :init
   (yas-global-mode 1))
+
+(unless (package-installed-p 'evil)
+  (package-install ' evil))
+
+(require 'evil)
+(evil-mode 1)
+(setq-default evil-cross-lines t)
