@@ -223,6 +223,11 @@
 
    #+END_SRC
 
+* JavaScript
+  #+BEGIN_EXPORT emacs-lisp
+    (use-package json-mode
+      :ensure t)
+  #+END_EXPORT
 * YAsnippet
   #+BEGIN_SRC emacs-lisp
     (use-package yasnippet

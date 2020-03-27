@@ -25,7 +25,7 @@
  '(custom-enabled-themes (quote (dracula)))
  '(package-selected-packages
    (quote
-    (fill-column-indicator highlight-indent-guides dtrt-indent dtrt-indent-mode elpy htmlize ox-reveal which-key use-package try toc-org org-bullets dracula-theme counsel auto-complete ace-window))))
+    (json-mode fill-column-indicator highlight-indent-guides dtrt-indent dtrt-indent-mode elpy htmlize ox-reveal which-key use-package try toc-org org-bullets dracula-theme counsel auto-complete ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -13,8 +13,10 @@
 
 (use-package org-bullets
   :ensure t
+  :init
+    (require 'ox-md)
   :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (defalias 'list-buffers 'ibuffer)
 
@@ -138,20 +140,22 @@
   (global-flycheck-mode t))
 
 (use-package jedi
-  :ensure t
-  :init
-    (setq jedi:setup-keys t)
-  :config
-    (add-hook 'python-mode-hook 'jedi:setup)
-    (add-hook 'python-mode-hook 'jedi:ac-setup)
-    (setq jedi:complete-on-dot t)
- )
+       :ensure t
+       :init
+         (setq jedi:setup-keys t)
+       :config
+         (add-hook 'python-mode-hook 'jedi:setup)
+         (add-hook 'python-mode-hook 'jedi:ac-setup)
+         (setq jedi:complete-on-dot t)
+      )
 
-(use-package elpy
-  :ensure t
-  :init
-    (elpy-enable)
-    (setq elpy-rpc-backend "jedi"))
+;; For Elpy
+;; pip install jedi
+     (use-package elpy
+       :ensure t
+       :init
+         (elpy-enable)
+         (setq elpy-rpc-backend "jedi"))
 
 (use-package yasnippet
   :ensure t
