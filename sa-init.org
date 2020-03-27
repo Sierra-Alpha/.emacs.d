@@ -213,6 +213,8 @@
          (setq jedi:complete-on-dot t)
       )
 
+;; For Elpy
+;; pip install jedi
      (use-package elpy
        :ensure t
        :init
