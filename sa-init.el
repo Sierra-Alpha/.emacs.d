@@ -162,11 +162,11 @@
   :init
   (yas-global-mode 1))
 
-(unless (package-installed-p 'evil)
-  (package-install ' evil))
-
-(require 'evil)
-(evil-mode 1)
-(setq-default evil-cross-lines t)
+(use-package evil
+   :ensure t
+   :config
+      (evil-mode 1)
+      (setq-default evil-cross-lines t)
+)
 
 (desktop-save-mode 1)

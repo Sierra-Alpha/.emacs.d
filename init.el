@@ -1,8 +1,15 @@
-
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (require 'package)
 (setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
+(setq package-archives
+      '(("elpa" . "https://elpa.gnu.org/packages/")
+        ("melpa stable" . "https://stable.melpa.org/packages/")
+        ("melpa" . "https://melpa.org/packages/"))
+      package-archive-priorities
+      '(("melpa stable" . 10)
+        ("melpa" . 5)
+        ("elpa" . 0)))
+
 
 (package-initialize)
 
@@ -25,7 +32,7 @@
  '(custom-enabled-themes (quote (dracula)))
  '(package-selected-packages
    (quote
-    (json-mode fill-column-indicator highlight-indent-guides dtrt-indent dtrt-indent-mode elpy htmlize ox-reveal which-key use-package try toc-org org-bullets dracula-theme counsel auto-complete ace-window))))
+    (evil undo-tree json-mode fill-column-indicator highlight-indent-guides dtrt-indent dtrt-indent-mode elpy htmlize ox-reveal which-key use-package try toc-org org-bullets dracula-theme counsel auto-complete ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
