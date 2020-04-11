@@ -18,6 +18,8 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 (org-babel-load-file (expand-file-name "~/.emacs.d/sa-init.org"))
 (custom-set-variables

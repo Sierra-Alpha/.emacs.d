@@ -139,16 +139,6 @@
   :init
   (global-flycheck-mode t))
 
-(use-package jedi
-       :ensure t
-       :init
-         (setq jedi:setup-keys t)
-       :config
-         (add-hook 'python-mode-hook 'jedi:setup)
-         (add-hook 'python-mode-hook 'jedi:ac-setup)
-         (setq jedi:complete-on-dot t)
-      )
-
 ;; For Elpy
 ;; pip install jedi
      (use-package elpy
