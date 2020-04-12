@@ -12,4 +12,5 @@ recentf
 /eshell
 .emacs*
 ido.last
+sa-init.el
 

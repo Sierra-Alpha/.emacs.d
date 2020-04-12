@@ -1,5 +1,8 @@
 #+STARTIP: overview
 
+# Notes to organise
+  # Would be nice to have all key bindings under one header
+  # Perhaps it's time to split into subheaders
 # shortcut for
 
 * Interface Tweaks
@@ -240,3 +243,56 @@
   #+BEGIN_SRC emacs-lisp
     (desktop-save-mode 1)
   #+END_SRC
+
+* Sort These nicely soon
+  # Taken from https://krsoninikhil.github.io/2018/12/15/easy-moving-from-vscode-to-emacs/
+** Duplicate Line 
+#+BEGIN_SRC emacs-lisp
+ (defun duplicate-line ()
+   (interactive)
+   (save-mark-and-excursion
+     (beginning-of-line)
+     (insert (thing-at-point 'line t))))
+
+ (global-set-key (kbd "C-S-d") 'duplicate-line)
+
+#+END_SRC
+
+** Up Down by one line
+#+BEGIN_SRC emacs-lisp
+ (defun move-line-down ()
+   (interactive)
+   (let ((col (current-column)))
+     (save-excursion
+       (forward-line)
+       (transpose-lines 1))
+     (forward-line)
+     (move-to-column col)))
+
+ (defun move-line-up ()
+   (interactive)
+   (let ((col (current-column)))
+     (save-excursion
+       (forward-line)
+       (transpose-lines -1))
+     (forward-line -1)
+     (move-to-column col)))
+
+ (global-set-key (kbd "C-S-j") 'move-line-down)
+ (global-set-key (kbd "C-S-k") 'move-line-up)
+
+#+END_SRC
+
+** Multiple cursors
+#+BEGIN_SRC emacs-lisp
+  (use-package multiple-cursors
+    :ensure t)
+  (global-set-key (kbd "C-|") 'mc/edit-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+  (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+  (define-key mc/keymap (kbd "<return>") nil)
+
+#+END_SRC
+
