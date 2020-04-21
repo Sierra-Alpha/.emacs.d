@@ -296,3 +296,8 @@
 
 #+END_SRC
 
+** Reload Buffer on file change if buffer is not changed
+#+BEGIN_SRC emacs-lisp
+  (global-auto-revert-mode t)
+
+#+END_SRC
