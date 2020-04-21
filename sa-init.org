@@ -216,11 +216,18 @@
 
    #+END_SRC
 
-* JavaScript
+* Web Stuff
+** Json
   #+BEGIN_EXPORT emacs-lisp
     (use-package json-mode
       :ensure t)
   #+END_EXPORT
+** Multi web editing
+#+BEGIN_SRC emacs-lisp
+  (use-package web-mode
+    :ensure t)
+
+#+END_SRC
 * YAsnippet
   #+BEGIN_SRC emacs-lisp
     (use-package yasnippet
