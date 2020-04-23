@@ -42,15 +42,18 @@
     (defalias 'list-buffers 'ibuffer)
   #+END_SRC
 
-* Backup to one directory
+* Backup and Autosave to one directory
   #+BEGIN_SRC emacs-lisp
      (setq backup-directory-alist
           `(("." . ,(concat user-emacs-directory "backups")))
 )
   #+END_SRC
   #+BEGIN_SRC emacs-lisp
-    (setq auto-save-file-name-transforms
-        `(("." ,(locate-user-emacs-file  "auto-saves/")))
+    (let ((my-auto-save-dir (locate-user-emacs-file "auto-saves/")))
+      (setq auto-save-file-name-transforms
+            `((".*" ,(my-auto-save-dir))))
+      (unless (file-exists-p my-auto-save-dir)
+        (make-directory my-auto-save-dir))
     )
 
   #+END_SRC
