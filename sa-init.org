@@ -303,8 +303,17 @@
 
 #+END_SRC
 
+
+# Other stuff
 ** Reload Buffer on file change if buffer is not changed
 #+BEGIN_SRC emacs-lisp
   (global-auto-revert-mode t)
+
+#+END_SRC
+** Evil Commentary
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-commentary
+    :ensure t)
+  (evil-commentary-mode)
 
 #+END_SRC
