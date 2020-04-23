@@ -50,7 +50,7 @@
   #+END_SRC
   #+BEGIN_SRC emacs-lisp
     (setq auto-save-file-name-transforms
-        `(("." ,(concat user-emacs-directory "auto-saves") t))
+        `(("." ,(locate-user-emacs-file  "auto-saves/")))
     )
 
   #+END_SRC
@@ -209,6 +209,7 @@
       :ensure t
       :init
       (global-flycheck-mode t))
+
   #+END_SRC
 
 * Python
@@ -219,7 +220,14 @@
        :ensure t
        :init
          (elpy-enable)
-         (setq elpy-rpc-backend "jedi"))
+         (setq elpy-rpc-backend "jedi")
+         (setq elpy-rpc-virtualenv-path 'current)
+     )
+
+;; For elpy to use flycheck
+  (when (load "flycheck" t t)
+    (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+    (add-hook 'elpy-mode-hook 'flycheck-mode))
 
    #+END_SRC
 
