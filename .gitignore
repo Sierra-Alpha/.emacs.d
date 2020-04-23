@@ -5,6 +5,8 @@
 .emacs*
 
 /auto-save-list
+/auto-saves
+/backups
 /elpa
 /elpy
 /eshell
