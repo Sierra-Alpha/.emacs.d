@@ -1,16 +1,18 @@
-/auto-save-list
-/elpa
-*.dat
-recentf
-/games
 *~
 \#*\#
 \.\#*
-/samples
-/.python-environments
+*.dat
+.emacs*
+
+/auto-save-list
+/elpa
 /elpy
 /eshell
-.emacs*
+/games
+/.python-environments
+/samples
+
 ido.last
+recentf
 sa-init.el
 
