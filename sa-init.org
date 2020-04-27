@@ -11,6 +11,7 @@
     (tool-bar-mode -1)
     (fset 'yes-or-no-p 'y-or-n-p)
     (global-set-key (kbd "<f5>") 'revert-buffer)
+    (column-number-mode 1)
   #+END_SRC
 
 * Try
