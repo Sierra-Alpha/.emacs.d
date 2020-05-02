@@ -2,6 +2,7 @@
 (tool-bar-mode -1)
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "<f5>") 'revert-buffer)
+(column-number-mode 1)
 
 (use-package try
   :ensure t)
@@ -21,7 +22,8 @@
 (defalias 'list-buffers 'ibuffer)
 
 (setq backup-directory-alist
-     `(("." . ,(concat user-emacs-directory "backups"))))
+          `(("." . ,(concat user-emacs-directory "backups")))
+)
 
 (add-hook 'prog-mode-hook 
           (lambda () (setq-local display-line-numbers 'visual)))
@@ -139,16 +141,6 @@
   :init
   (global-flycheck-mode t))
 
-(use-package jedi
-       :ensure t
-       :init
-         (setq jedi:setup-keys t)
-       :config
-         (add-hook 'python-mode-hook 'jedi:setup)
-         (add-hook 'python-mode-hook 'jedi:ac-setup)
-         (setq jedi:complete-on-dot t)
-      )
-
 ;; For Elpy
 ;; (sudo) pip(3) install virtualenv
 ;; (sudo) pip(3) install jedi
@@ -156,7 +148,17 @@
        :ensure t
        :init
          (elpy-enable)
-         (setq elpy-rpc-backend "jedi"))
+         (setq elpy-rpc-backend "jedi")
+         (setq elpy-rpc-virtualenv-path 'current)
+     )
+
+;; For elpy to use flycheck
+  (when (load "flycheck" t t)
+    (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+    (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+(use-package web-mode
+  :ensure t)
 
 (use-package yasnippet
   :ensure t
@@ -171,3 +173,47 @@
 )
 
 (desktop-save-mode 1)
+
+(defun duplicate-line ()
+  (interactive)
+  (save-mark-and-excursion
+    (beginning-of-line)
+    (insert (thing-at-point 'line t))))
+
+(global-set-key (kbd "C-S-d") 'duplicate-line)
+
+(defun move-line-down ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines 1))
+    (forward-line)
+    (move-to-column col)))
+
+(defun move-line-up ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines -1))
+    (forward-line -1)
+    (move-to-column col)))
+
+(global-set-key (kbd "C-S-j") 'move-line-down)
+(global-set-key (kbd "C-S-k") 'move-line-up)
+
+(use-package multiple-cursors
+  :ensure t)
+(global-set-key (kbd "C-|") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+(define-key mc/keymap (kbd "<return>") nil)
+
+(global-auto-revert-mode t)
+
+(use-package evil-commentary
+  :ensure t)
+(evil-commentary-mode)
