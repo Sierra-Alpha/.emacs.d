@@ -150,7 +150,8 @@
       )
 
 ;; For Elpy
-;; pip install jedi
+;; (sudo) pip(3) install virtualenv
+;; (sudo) pip(3) install jedi
      (use-package elpy
        :ensure t
        :init
