@@ -6,8 +6,8 @@
         ("melpa stable" . "https://stable.melpa.org/packages/")
         ("melpa" . "https://melpa.org/packages/"))
       package-archive-priorities
-      '(("melpa stable" . 10)
-        ("melpa" . 5)
+      '(("melpa" . 10)
+        ("melpa stable" . 5)
         ("elpa" . 0)))
 
 
