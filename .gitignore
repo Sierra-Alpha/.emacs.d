@@ -3,6 +3,7 @@
 \.\#*
 *.dat
 .emacs*
+!.emacs.win-change-defaults
 
 /auto-save-list
 /auto-saves
