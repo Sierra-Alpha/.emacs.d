@@ -1,13 +1,11 @@
-;;(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 (require 'package)
 (setq package-enable-at-startup nil)
 (setq package-archives
       '(("elpa" . "https://elpa.gnu.org/packages/")
-        ("melpa stable" . "https://stable.melpa.org/packages/")
         ("melpa" . "https://melpa.org/packages/"))
       package-archive-priorities
       '(("melpa" . 10)
-        ("melpa stable" . 5)
         ("elpa" . 0)))
 
 
