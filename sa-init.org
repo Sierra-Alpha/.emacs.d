@@ -12,8 +12,35 @@
     (fset 'yes-or-no-p 'y-or-n-p)
     (global-set-key (kbd "<f5>") 'revert-buffer)
     (column-number-mode 1)
-  #+END_SRC
 
+    ;; Save place in each buffer when returning
+    (save-place-mode 1)
+
+    ;; Start at a maximum frame for the initial frame
+    (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+    ;; Turn off annoying emacs beep but make it visible instead
+    (setq visible-bell t)
+
+    ;; Make it flash the mode line
+    (use-package mode-line-bell
+      :ensure t)
+
+  #+END_SRC
+* Start new frame as new emacs
+  Useful when you're working on different Issues and you want the buffers to 
+  remain Issue specific.
+  Taken from https://emacs.stackexchange.com/a/117
+  #+BEGIN_SRC emacs-lisp
+    (defun start-other-emacs ()
+      "Start another Emacs process to open an independent Emacs window."
+      (interactive)
+      ;;; Run the command "emacs", piping output into a 
+      ;;; buffer called "*other-emacs*"
+      (start-process "emacs" "*other-emacs*" "emacs"))
+    (global-set-key (kbd "C-x 5 2") 'start-other-emacs)
+
+  #+END_SRC
 * Try
   #+BEGIN_SRC emacs-lisp
     (use-package try
@@ -84,8 +111,7 @@
       :config
         (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
       )
-  #+END_SRC
-
+  #+
 * Highlight Indentation
   #+BEGIN_SRC emacs-lisp
     (use-package highlight-indent-guides
